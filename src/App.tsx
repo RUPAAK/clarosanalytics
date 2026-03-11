@@ -14,9 +14,9 @@ function App() {
   }, [mobileNavOpen]);
 
   return (
-    <div className="min-h-screen bg-zinc-50 text-zinc-950">
-      <div className="grid min-h-screen w-full grid-cols-1 lg:grid-cols-[260px_1fr]">
-        <aside className="hidden border-r border-zinc-200 bg-white lg:block">
+    <div className="min-h-screen bg-zinc-50 text-zinc-950 lg:h-screen lg:overflow-hidden">
+      <div className="grid min-h-screen w-full grid-cols-1 lg:h-full lg:grid-cols-[260px_1fr]">
+        <aside className="hidden border-r border-zinc-200 bg-white lg:sticky lg:top-0 lg:block lg:h-screen lg:overflow-y-auto">
           <div className="flex h-16 items-center px-6">
             <div className="flex items-center gap-3">
               <div className="grid h-10 w-10 place-items-center rounded-2xl bg-zinc-950 text-sm font-semibold text-white">
@@ -35,7 +35,7 @@ function App() {
           </nav>
         </aside>
 
-        <div className="flex min-w-0 flex-col">
+        <div className="flex min-w-0 flex-col lg:min-h-0">
           <header className="sticky top-0 z-10 border-b border-zinc-200 bg-white/80 backdrop-blur">
             <div className="flex h-16 items-center justify-between px-4 lg:px-8">
               <div className="flex items-center gap-3">
@@ -65,7 +65,7 @@ function App() {
             </div>
           </header>
 
-          <main className="flex-1 px-4 py-6 lg:px-8">
+          <main className="flex-1 px-4 py-6 lg:overflow-y-auto lg:px-8">
             <Outlet />
           </main>
         </div>

@@ -293,9 +293,9 @@ export default function DataPage() {
           </div>
         ) : null}
 
-        <div className="overflow-x-auto">
+        <div className="max-h-[65vh] overflow-auto">
           <table className="min-w-full text-left text-sm">
-            <thead className="bg-zinc-50 text-xs uppercase tracking-wide text-zinc-600">
+            <thead className="sticky top-0 z-10 bg-zinc-50 text-xs uppercase tracking-wide text-zinc-600">
               <tr>
                 <th className="px-5 py-3 font-medium">Character</th>
                 <th className="px-5 py-3 font-medium">Status</th>

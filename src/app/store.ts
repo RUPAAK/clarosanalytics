@@ -2,7 +2,7 @@ import {
   applyMiddleware,
   combineReducers,
   compose,
-  legacy_createStore,
+  createStore,
   type AnyAction,
   type Dispatch,
   type Middleware,
@@ -37,11 +37,14 @@ const thunkMiddleware: Middleware<unknown, RootState, AppDispatch> =
 
 const composeEnhancers =
   (import.meta.env.DEV &&
-    (window as unknown as { __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose })
-      .__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
+    (
+      window as unknown as {
+        __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose;
+      }
+    ).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
   compose;
 
-export const store = legacy_createStore(
+export const store = createStore(
   rootReducer,
   undefined,
   composeEnhancers(applyMiddleware(thunkMiddleware)),
