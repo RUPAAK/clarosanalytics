@@ -5,7 +5,7 @@ import {
   initialCharactersQuery,
   setCharactersQuery,
 } from "../features/characters/charactersStore";
-import type { CharactersQuery } from "../features/characters/charactersTypes";
+import type { CharactersQuery } from "../features/characters/charactersStore";
 
 function useDebouncedValue<T>(value: T, delayMs: number) {
   const [debounced, setDebounced] = useState(value);

@@ -33,6 +33,18 @@ npm run preview
 npm run lint
 ```
 
+## Unit tests (Jest)
+
+```bash
+npm test
+```
+
+Watch mode:
+
+```bash
+npm run test:watch
+```
+
 ## Notes
 - Redux DevTools is enabled in dev builds (if you have the browser extension).
 
