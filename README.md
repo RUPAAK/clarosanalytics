@@ -8,17 +8,14 @@ Monochrome dashboard UI with 2 routes:
 - Node.js 18+ (recommended: 20+)
 
 ## Install
-This project uses `pnpm` (recommended).
-
 ```bash
-corepack enable
-pnpm install
+npm install
 ```
 
 ## Run (development)
 
 ```bash
-pnpm dev
+npm run dev
 ```
 
 Open the URL shown in the terminal (usually `http://localhost:5173/`).
@@ -26,16 +23,30 @@ Open the URL shown in the terminal (usually `http://localhost:5173/`).
 ## Build (production)
 
 ```bash
-pnpm build
-pnpm preview
+npm run build
+npm run preview
 ```
 
 ## Lint
 
 ```bash
-pnpm lint
+npm run lint
 ```
 
 ## Notes
-- If `npm install` fails on your machine, stick to `pnpm install` for dependencies.
 - Redux DevTools is enabled in dev builds (if you have the browser extension).
+
+## Troubleshooting
+If `npm install` fails with:
+
+```
+Cannot read properties of null (reading 'matches')
+```
+
+it’s an npm internal dependency resolver (Arborist) crash. Try switching npm versions:
+
+```bash
+npm -v
+npm i -g npm@10.7.0
+npm install
+```
