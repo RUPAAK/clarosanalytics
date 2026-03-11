@@ -1,6 +1,6 @@
 # Analytics Dashboard (Vite + React + Tailwind + Redux)
 
-Monochrome dashboard UI with 2 routes:
+Clarosanalytics dashboard UI with 2 routes:
 - `/` Home
 - `/data` Data table (public API + pagination + search + filters)
 
