@@ -1,14 +1,6 @@
-import { decrement, increment } from "../features/counter/counterSlice";
-import { useAppDispatch, useAppSelector } from "../app/hooks";
 import readmeContent from "../../README.md?raw";
 
 export default function HomePage() {
-  const value = useAppSelector((s) => s.counter.value);
-  const { data: charactersData, loading: charactersLoading } = useAppSelector(
-    (s) => s.characters,
-  );
-  const dispatch = useAppDispatch();
-
   return (
     <div className="space-y-6">
       <header className="flex flex-col gap-1">
