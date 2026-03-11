@@ -1,8 +1,12 @@
 # Analytics Dashboard (Vite + React + Tailwind + Redux)
 
-Clarosanalytics dashboard UI with 2 routes:
-- `/` Home
-- `/data` Data table (public API + pagination + search + filters)
+Clarosanalytics dashboard application with:
+- **Two routes**: `/` Home and `/data` Data.
+- **Public API integration** (Rick & Morty characters) displayed in a table.
+- **Search, filters, and pagination** on the data table.
+- **Redux** (plain Redux, not Toolkit) for state management.
+- **TypeScript** across the app for type safety.
+- **Unit tests** (Jest) for reducers/thunks and **Cypress E2E tests** for key flows.
 
 ## Prerequisites
 - Node.js 18+ (recommended: 20+)
