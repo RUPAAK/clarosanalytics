@@ -45,6 +45,10 @@ Watch mode:
 npm run test:watch
 ```
 
+### What’s covered
+- `src/features/counter/counterSlice.test.ts`: counter reducer actions
+- `src/features/characters/charactersStore.test.ts`: characters reducer + API fetch thunk (success + 404 + network error)
+
 ## Notes
 - Redux DevTools is enabled in dev builds (if you have the browser extension).
 
