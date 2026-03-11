@@ -49,6 +49,30 @@ npm run test:watch
 - `src/features/counter/counterSlice.test.ts`: counter reducer actions
 - `src/features/characters/charactersStore.test.ts`: characters reducer + API fetch thunk (success + 404 + network error)
 
+## E2E tests (Cypress)
+
+Run headless:
+
+```bash
+npm run e2e
+```
+
+Open Cypress UI:
+
+```bash
+npm run cy:open
+```
+
+E2E specs live in `cypress/e2e/`.
+
+Note: `npm run e2e` uses port `5173`. If you already have `npm run dev` running, stop it first.
+
+If Cypress says the **binary is missing**, run once:
+
+```bash
+npm run cy:install
+```
+
 ## Notes
 - Redux DevTools is enabled in dev builds (if you have the browser extension).
 
