@@ -1,0 +1,26 @@
+{
+  "info": { "count": 2, "pages": 1, "next": null, "prev": null },
+  "results": [
+    {
+      "id": 1,
+      "name": "Rick Sanchez",
+      "status": "Alive",
+      "species": "Human",
+      "gender": "Male",
+      "image": "https://example.com/rick.png",
+      "origin": { "name": "Earth" },
+      "location": { "name": "Earth" }
+    },
+    {
+      "id": 2,
+      "name": "Morty Smith",
+      "status": "Alive",
+      "species": "Human",
+      "gender": "Male",
+      "image": "https://example.com/morty.png",
+      "origin": { "name": "Earth" },
+      "location": { "name": "Earth" }
+    }
+  ]
+}
+
