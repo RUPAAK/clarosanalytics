@@ -1,12 +1,48 @@
-import { configureStore } from '@reduxjs/toolkit'
-import counterReducer from '../features/counter/counterSlice'
+import {
+  applyMiddleware,
+  combineReducers,
+  compose,
+  legacy_createStore,
+  type AnyAction,
+  type Dispatch,
+  type Middleware,
+} from "redux";
+import counterReducer from "../features/counter/counterSlice";
+import charactersReducer from "../features/characters/charactersStore";
 
-export const store = configureStore({
-  reducer: {
-    counter: counterReducer,
-  },
-})
+const rootReducer = combineReducers({
+  counter: counterReducer,
+  characters: charactersReducer,
+});
 
-export type RootState = ReturnType<typeof store.getState>
-export type AppDispatch = typeof store.dispatch
+export type RootState = ReturnType<typeof rootReducer>;
 
+export type ThunkAction<R = unknown> = (
+  dispatch: AppDispatch,
+  getState: () => RootState,
+) => R;
+
+export type AppDispatch = Dispatch<AnyAction> &
+  ((thunk: ThunkAction) => unknown);
+
+const thunkMiddleware: Middleware<unknown, RootState, AppDispatch> =
+  ({ dispatch, getState }) =>
+  (next) =>
+  (action) => {
+    if (typeof action === "function") {
+      return (action as ThunkAction)(dispatch, getState);
+    }
+    return next(action as AnyAction);
+  };
+
+const composeEnhancers =
+  (import.meta.env.DEV &&
+    (window as unknown as { __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose })
+      .__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
+  compose;
+
+export const store = legacy_createStore(
+  rootReducer,
+  undefined,
+  composeEnhancers(applyMiddleware(thunkMiddleware)),
+);
