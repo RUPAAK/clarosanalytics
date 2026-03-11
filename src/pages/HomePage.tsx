@@ -5,9 +5,6 @@ export default function HomePage() {
     <div className="space-y-6">
       <header className="flex flex-col gap-1">
         <h1 className="text-xl font-semibold tracking-tight">Home</h1>
-        <p className="text-sm text-zinc-600">
-          Dashboard overview using a white background with black/gray shades.
-        </p>
       </header>
 
       <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
