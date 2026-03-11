@@ -7,11 +7,9 @@ import {
   type Dispatch,
   type Middleware,
 } from "redux";
-import counterReducer from "../features/counter/counterSlice";
 import charactersReducer from "../features/characters/charactersStore";
 
 const rootReducer = combineReducers({
-  counter: counterReducer,
   characters: charactersReducer,
 });
 
